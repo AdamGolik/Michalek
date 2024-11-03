@@ -177,7 +177,6 @@ img.ofirmie.scroll-reveal .img-part:nth-child(even) {
     margin-top: 20px;
     border-radius: 10px;
 }
-
 .Onas, .Polityka, .Pryvatność, .img {
     flex: 1;
     margin: 10px;
@@ -196,7 +195,7 @@ img.ofirmie.scroll-reveal .img-part:nth-child(even) {
 }
 
 .Onas a:hover, .Pryvatność a:hover {
-    background-color: #16c5f5;
+    color: #1a8d1a;
     transition: background-color 0.3s;
 }
 
@@ -204,9 +203,8 @@ img.ofirmie.scroll-reveal .img-part:nth-child(even) {
     margin: 5px 0;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Strong 3D shadow effect */
 }
-
 .img img {
-    max-width: 150px;
+    max-width: 300px;
     border-radius: 10px;
 }
 

@@ -211,6 +211,31 @@ body {
 .scroll-reveal-text {
     animation: fadeInUp 1s ease-out forwards;
 }
+
+@keyframes slideInLeft {
+    from {
+
+        transform: scale(0) translateX(-100%);
+        opacity: 0;
+        filter: blur(200px);
+    }
+    to {
+        transform: scale(1) translateX(0);
+        opacity: 1;
+        filter: blur(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
 /* Stylizacja hamburger menu i media queries dla małych ekranów */
 
 @media (max-width: 800px) {
