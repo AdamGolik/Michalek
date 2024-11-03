@@ -1,0 +1,237 @@
+/* Modernizacja wyglądu oraz animacje */
+
+body {
+    background: linear-gradient(45deg, #1e1e1e, #3f3f3f);
+    padding: 0;
+    margin: 0;
+    font-family: "Arial", sans-serif;
+    transition: background 0.5s ease; /* Smooth background color transition */
+}
+
+.nav {
+    width: 100%;
+    height: 70px;
+    background: rgba(30, 30, 30, 0.9); /* semi-transparent background */
+    position: relative;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    animation: slideDown 0.7s ease; /* slide-down animation */
+}
+
+@keyframes slideDown {
+    from {
+        top: -70px;
+    }
+    to {
+        top: 0;
+    }
+}
+
+.nav-item {
+    display: flex;
+    color: rgba(255, 255, 255, 0.87);
+    position: relative;
+    gap: 30px;
+    font-size: 18px;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.nav img {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 40px;
+}
+
+.nav-item a {
+    font-family: "Devanagari Sangam MN", serif;
+    text-decoration: none;
+    color: inherit;
+    position: relative;
+    overflow: hidden;
+}
+
+.nav-item a:hover {
+    color: #21b921;
+    transform: scale(1.1);
+    transition: color 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.nav-item a::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #21b921;
+    visibility: hidden;
+    transform: scaleX(0);
+    transition: all 0.3s ease-in-out;
+}
+
+.nav-item a:hover::before {
+    visibility: visible;
+    transform: scaleX(1);
+}
+
+.Grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 30px;
+    width: 80%;
+    margin-top: 80px;
+    padding: 20px;
+    box-sizing: border-box;
+    margin-left: auto;
+    margin-right: auto;
+    animation: fadeInGrid 0.5s ease; /* fade-in animation */
+}
+
+@keyframes fadeInGrid {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.Domky {
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.Domky:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.Domky img {
+    width: 100%;
+    height: auto;
+}
+
+.about1 {
+    padding: 20px;
+}
+
+.about1 h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.about1 h4 {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #21b921;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.button:hover {
+    background-color: #1a8d1a;
+    transform: translateY(-3px);
+}
+
+.Polityc {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #1e1e1e;
+    color: rgba(255, 255, 255, 0.87);
+    flex-wrap: wrap;
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.Onas, .Polityka, .Pryvatność, .img {
+    flex: 1;
+    margin: 10px;
+}
+
+.Onas a, .Pryvatność a {
+    display: block;
+    color: rgba(255, 255, 255, 0.87);
+    text-decoration: none;
+    margin-bottom: 5px;
+}
+
+.Onas a:hover, .Pryvatność a:hover {
+    color: #21b921;
+}
+
+.Polityka h1, .Polityka h4 {
+    margin: 0;
+}
+
+.img img {
+    max-width: 300px;
+}
+
+.Pryvatność h4, .Pryvatność a {
+    margin: 5px 0;
+}
+/* Scroll Reveal Animation */
+.scroll-reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.scroll-reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Additional animations for image and text */
+.scroll-reveal-img {
+    animation: slideInLeft 1s ease-out forwards;
+}
+
+.scroll-reveal-text {
+    animation: fadeInUp 1s ease-out forwards;
+}
+
+@keyframes slideInLeft {
+    from {
+        filter: blur(200px);
+        opacity: 0;
+        transform: scale(0) translateX(-100%);
+    }
+    to {
+        filter: blur(0);
+        opacity: 1;
+        transform: scale(1) translateX(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+

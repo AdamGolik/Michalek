@@ -1,0 +1,282 @@
+/* Modernizacja wyglądu oraz animacje */
+
+body {
+    background: radial-gradient(circle at center, #1e1e1e, #3f3f3f);
+    padding: 0;
+    margin: 0;
+    font-family: "Arial", sans-serif;
+    transition: background 0.5s ease; /* Smooth background color transition */
+    color: rgba(255, 255, 255, 0.87);
+}
+
+.nav {
+    width: 100%;
+    height: 70px;
+    background: rgba(30, 30, 30, 0.9); /* semi-transparent background */
+    position: relative;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    animation: slideDown 0.7s ease; /* slide-down animation */
+}
+
+@keyframes slideDown {
+    from {
+        top: -70px;
+    }
+    to {
+        top: 0;
+    }
+}
+
+.nav-item {
+    display: flex;
+    color: rgba(255, 255, 255, 0.87);
+    position: relative;
+    gap: 30px;
+    font-size: 18px;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.nav img {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 40px;
+}
+
+.nav-item a {
+    font-family: "Devanagari Sangam MN", serif;
+    text-decoration: none;
+    color: inherit;
+    position: relative;
+    overflow: hidden;
+}
+
+.nav-item a:hover {
+    color: #21b921;
+    transform: scale(1.1);
+    transition: color 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.nav-item a::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #21b921;
+    visibility: hidden;
+    transform: scaleX(0);
+    transition: all 0.3s ease-in-out;
+}
+
+.nav-item a:hover::before {
+    visibility: visible;
+    transform: scaleX(1);
+}
+
+/* Main content enhancements */
+.Ofirmie {
+    max-width: 1000px;
+    margin: 100px auto 20px auto;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.7);
+    text-align: center;
+    transform: perspective(1000px) rotateX(2deg);
+    backdrop-filter: blur(10px);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 0;
+}
+
+.Ofirmie img.ofirmie {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.7);
+    position: absolute;
+    top: 50px; /* Aby przesunąć obraz nad tekstem */
+    z-index: 1; /* Wyższy z-index, by obraz był nad tekstem */
+    display: grid;
+    grid-template-columns: repeat(10, 1fr); /* Podział na 10 kolumn */
+    grid-template-rows: repeat(10, 1fr);   /* Podział na 10 wierszy */
+    overflow: hidden;
+}
+
+/* Styl dla każdej części obrazu */
+.img-part {
+    position: absolute;
+    overflow: hidden;
+}
+
+.img-part img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease, opacity 0.6s ease;
+}
+
+/* Animacje dla każdego fragmentu */
+.scroll-reveal.img-part.visible img {
+    transform: translate(0, 0);
+    opacity: 1;
+}
+
+/* Delikatne opóźnienia dla każdego fragmentu */
+img.ofirmie.scroll-reveal .img-part:nth-child(odd) {
+    transition-delay: 0.2s;
+}
+
+img.ofirmie.scroll-reveal .img-part:nth-child(even) {
+    transition-delay: 0.3s;
+}
+
+.Ofirmie h1 {
+    font-size: 36px;
+    margin: 80px 0 10px 0; /* Zwiększenie marginesu, aby uwzględnić obraz */
+    color: #16c5f5;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Strong 3D shadow effect */
+}
+
+.Ofirmie p {
+    font-size: 18px;
+    margin-bottom: 20px;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.87);
+}
+
+.Ofirmie p a {
+    color: #16c5f5;
+    text-decoration: none;
+}
+
+.Ofirmie p a:hover {
+    text-decoration: underline;
+}
+
+/* Footer section */
+.Polityc {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: rgba(255, 255, 255, 0.87);
+    flex-wrap: wrap;
+    box-shadow: 0 -8px 16px rgba(0, 0, 0, 0.7);
+    margin-top: 20px;
+    border-radius: 10px;
+}
+
+.Onas, .Polityka, .Pryvatność, .img {
+    flex: 1;
+    margin: 10px;
+    text-align: center;
+    transform: perspective(500px) rotateY(1deg);
+}
+
+.Onas a, .Pryvatność a {
+    display: block;
+    color: #fff;
+    text-decoration: none;
+    margin-bottom: 5px;
+    padding: 5px;
+    border-radius: 5px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.Onas a:hover, .Pryvatność a:hover {
+    background-color: #16c5f5;
+    transition: background-color 0.3s;
+}
+
+.Polityka h1, .Polityka h4 {
+    margin: 5px 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Strong 3D shadow effect */
+}
+
+.img img {
+    max-width: 150px;
+    border-radius: 10px;
+}
+
+.Pryvatność h4, .Pryvatność a {
+    margin: 5px 0;
+}
+
+/* Podstawowe ukrywanie elementów do animacji */
+.scroll-reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.scroll-reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Dodanie efektów stopniowej animacji dla różnych elementów */
+.Ofirmie h1.scroll-reveal {
+    transition-delay: 0.4s;
+}
+
+.Ofirmie p.scroll-reveal {
+    transition-delay: 0.6s;
+}
+
+.Ofirmie a.scroll-reveal {
+    transition-delay: 0.8s;
+}
+
+.Onas.scroll-reveal, .Polityka.scroll-reveal, .img.scroll-reveal, .Pryvatność.scroll-reveal {
+    transition-delay: 0.5s;
+}
+@media (max-width: 768px) {
+    .Ofirmie {
+        padding: 10px;
+    }
+
+    .Ofirmie img.ofirmie {
+        width: 100%;
+    }
+
+    .Ofirmie h1 {
+        font-size: 1.8em;
+    }
+
+    .Ofirmie p {
+        font-size: 1em;
+    }
+
+    .Polityc {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .Onas, .Polityka, .Pryvatność, .img {
+        flex: none;
+        margin: 5px 0;
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .Ofirmie h1 {
+        font-size: 1.5em;
+    }
+
+    .Ofirmie p {
+        font-size: 0.9em;
+    }
+}
