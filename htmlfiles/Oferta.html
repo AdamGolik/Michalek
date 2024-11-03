@@ -10,18 +10,25 @@
 <body>
 
 <section title="start">
-    <div class="nav">
-        <div class="nav-item">
-            <a href="../index.html" class="Home">Home</a>
-            <a href="../htmlfiles/OFirmie.html" class="About">O Firmie</a>
-            <a href="../htmlfiles/Contact.html" class="Contact">Kontakt</a>
-            <a href="../htmlfiles/Galeria.html" class="Gallery">Galeria</a>
-            <a href="../htmlfiles/Oferta.html" class="Ofert">Oferta</a>
+    <section class="navbar scroll-reveal">
+        <div class="nav">
+            <div class="nav-item">
+                <a href="../index.html" class="Home">Home</a>
+                <a href="../htmlfiles/OFirmie.html" class="About">O Firmie</a>
+                <a href="../htmlfiles/Contact.html" class="Contact">Kontakt</a>
+                <a href="../htmlfiles/Galeria.html" class="Gallery">Galeria</a>
+                <a href="../htmlfiles/Oferta.html" class="Ofert">Oferta</a>
+            </div>
+            <div class="nav-logo">
+                <img src="../img/logo.png" alt="logo" class="logo">
+                <div class="hamburger" onclick="toggleMenu()">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+            </div>
         </div>
-        <div class="nav-logo">
-            <img src="../img/logo.png" alt="logo" class="logo">
-        </div>
-    </div>
+    </section>
     <section class="Oferta scroll-reveal">
         <img src="../img/drewniany-dom-klasyczny.jpg" alt="oferta" class="oferta"></img>
         <h1 class="scroll-reveal-text">Klasyczne domy drewniane</h1>
@@ -54,4 +61,5 @@
 </section>
 </body>
 <script src="../js/intersection-observ.js"></script>
+<script src="js/hambur.js"></script>
 </html>
